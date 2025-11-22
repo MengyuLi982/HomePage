@@ -133,6 +133,22 @@
     margin-top: -1.5em;
     padding-left: 1.25rem;
   }
+
+  .misc-media {
+    margin: 2.5rem auto 3rem;
+    max-width: min(960px, calc(100vw - 4rem));
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+
+    iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      background: #111;
+    }
+  }
 }
 
 .page.about-page {
