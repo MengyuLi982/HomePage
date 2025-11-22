@@ -468,3 +468,187 @@ a.reversefootnote {
   color: $danger-color;
   font-weight: bold;
 }
+
+
+/*
+   Research Item Layout
+   ========================================================================== */
+
+.research-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35em;
+  padding: 1.35em;
+  margin-bottom: 2.25em;
+  width: min(990px, calc(100vw - 6rem));
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 35px 60px rgba(16, 24, 60, 0.28);
+  backdrop-filter: blur(26px) saturate(185%);
+  -webkit-backdrop-filter: blur(26px) saturate(185%);
+  position: relative;
+  overflow: hidden;
+  align-items: flex-start;
+  transform-style: preserve-3d;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.75), transparent 60%),
+      radial-gradient(circle at 80% 15%, rgba(148, 163, 184, 0.3), transparent 45%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    opacity: 0.95;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='rgba(255,255,255,0)'/%3E%3Ccircle cx='2' cy='2' r='1' fill='rgba(255,255,255,0.25)'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @include breakpoint($medium) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.8em;
+  }
+
+  .research-image {
+    width: 100%;
+    max-width: none;
+    flex: 0 0 44%;
+    flex-shrink: 0;
+    margin-bottom: 0.75em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    min-height: 0;
+    
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+    }
+
+    @include breakpoint($medium) {
+      margin-right: 2.25em;
+      margin-bottom: 0;
+    }
+  }
+
+  .research-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 56%;
+    padding-right: 0.5rem;
+    
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0.35em;
+      font-size: 1.05em;
+      font-weight: 700;
+      color: $link-color;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          color: darken($link-color, 10%);
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .authors {
+      font-size: 0.8em;
+      color: mix(#fff, $text-color, 20%);
+      margin-bottom: 0.3em;
+    }
+
+    .venue {
+      font-style: italic;
+      font-size: 0.8em;
+      margin-bottom: 0.75em;
+      color: mix(#fff, $gray, 35%);
+    }
+
+    .links {
+      font-size: 0.8em;
+      margin-bottom: 0.6em;
+
+      a {
+        display: inline-block;
+        margin-right: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        color: $link-color;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    p {
+      font-size: 0.82em;
+      line-height: 1.35;
+      margin-bottom: 0.55em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.research-item--medium {
+  .research-image {
+    max-width: 320px;
+    min-height: 0;
+  }
+
+  .research-content {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+.research-image--medium {
+  max-width: 320px;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 0.35em;
+  padding: 2px 8px;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  color: $link-color;
+}

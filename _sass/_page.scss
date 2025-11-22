@@ -100,10 +100,48 @@
     font-size: $type-size-6;
   }
 
+  .intro-section {
+    width: min(990px, calc(100vw - 6rem));
+    margin: 0 auto 2.5rem;
+    color: $text-color;
+
+    p {
+      margin: 0 0 1.5em 0;
+      line-height: 1.65;
+      font-size: 1em;
+    }
+
+    .typed-intro {
+      font-size: 1.3em;
+      font-weight: 600;
+      margin: 0 0 1.25em 0;
+      min-height: 2.25em;
+
+      #typed-intro {
+        border-right: 2px solid rgba(0,0,0,0.35);
+        padding-right: 0.1em;
+      }
+
+      .typed-cursor {
+        font-weight: 600;
+      }
+    }
+  }
+
   /* blockquote citations */
   blockquote + .small {
     margin-top: -1.5em;
     padding-left: 1.25rem;
+  }
+}
+
+.page.about-page {
+  .page__title {
+    display: none;
+  }
+
+  .intro-section {
+    width: min(990px, calc(100vw - 4rem));
   }
 }
 
