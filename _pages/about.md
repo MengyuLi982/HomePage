@@ -67,7 +67,7 @@ Research
 
 <div class="research-item">
   <div class="research-image">
-    <img src="/images/mfnet_compar1.png" alt="Master's Thesis">
+    <img src="/images/dsec_results.png" alt="Master's Thesis">
   </div>
   <div class="research-content">
     <h3>Multi-Modal Fusion of Image Sequences for Dense Prediction with RGB and Event Cameras in Autonomous Driving</h3>
