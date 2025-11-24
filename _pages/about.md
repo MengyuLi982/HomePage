@@ -78,10 +78,13 @@ Research
       <a href="https://docs.google.com/presentation/d/1a2isDWwUEuJyFn9VIvA9gUrYdCAh3KPrWyDsUgil-Js/edit?usp=sharing" target="_blank" rel="noopener">Slides</a>
     </div>
     <p>
-      This work unifies RGB and event streams for dense prediction, with semantic segmentation as the primary downstream task. RGB sensors provide texture-rich spatial cues, whereas event cameras excel at capturing micro-motion and high dynamic range.
+      Integrating RGB and event camera data through multi-modal fusion in autonomous driving significantly enhances
+ dense prediction tasks such as depth estimation and object detection. RGB cameras provide high-resolution color
+ imagery crucial for visual perception. In contrast, event cameras offer high temporal resolution and dynamic
+ range, capturing pixel-level changes caused by motion even in challenging lighting conditions. 
     </p>
     <p>
-      I designed a hybrid encoder that aligns asynchronous event spikes with frame-based cues through temporal attention and mutual-information guided consistency terms. The fusion strategy yields more stable segmentation under extreme lighting, fast egomotion, and motion blur.
+      The work can construct a more comprehensive and robust representation of the environment by fusing the continuous visual stream of RGB with the asynchronous intensity changes captured by event cameras. This thesis mainly focuses on combining the multi-modal features for semantic segmentation. 
     </p>
   </div>
 </div>
@@ -98,10 +101,10 @@ Research
       <a href="https://huggingface.co/datasets/BigmouthFish/EMOT" target="_blank" rel="noopener">Dataset</a>
     </div>
     <p>
-      I curated TUMTraf EMOT, the first event-based ITS dataset with synchronized vehicle and pedestrian sequences across diverse weather, illumination, and traffic densities. The benchmark includes calibrated RGB, event, and IMU streams plus fine-grained 3D bounding boxes.
+      In Intelligent Transportation Systems (ITS), multi object tracking is primarily based on frame-based cameras. However, these cameras tend to perform poorly under dim lighting and high-speed motion conditions. Event cameras, characterized by low latency, high dynamic range and high temporal resolution, have considerable potential to mitigate these issues. Compared to frame-based vision, there are far fewer studies on event-based vision. To address this research gap, we introduce a dataset tailored for event-based ITS, covering vehicle and pedestrian detection and tracking. 
     </p>
     <p>
-      Building on the dataset, I proposed a tracking-by-detection pipeline with a dual-head feature extractor that handles sparse event voxels and dense frame crops jointly. The baseline outperforms frame-only trackers under low-light conditions while remaining computationally efficient.
+      Based on this dataset, we establish a tracking-by-detection benchmark with a specialized feature extractor. The experimental results demonstrate the excellent performance of our method. We hope our work can facilitate further research on the use of event cameras for ITS.
     </p>
   </div>
 </div>
@@ -119,10 +122,10 @@ Research
       <a href="https://disrupt-projekt.de/index.php" target="_blank" rel="noopener">Website</a>
     </div>
     <p>
-      I explored decentralized multi-object tracking on a heterogeneous sensor network that couples event-based edge devices with RGB-lidar hubs. Emphasis was placed on covariance-intersection fusion and low-bandwidth hypothesis exchange.
+      During my internship at Fraunhofer IVI, I worked on making multi camera object tracking in urban traffic more robust and scalable. I built a decentralized tracking framework that keeps object identities consistent across cameras, even when objects are occluded or leave and re enter the scene. I also improved the way information from several cameras is fused so that the system remains stable and reliable as more sensors are added.
     </p>
     <p>
-      Beyond the perception stack, I implemented an MQTT-based telemetry layer, ROS2 wireless protocols, and Dockerized deployment units so that partners could reproduce the tracking stack on both automotive-grade hardware and cloud simulators.
+      In addition, I designed the communication and deployment setup so this tracking system can run both on real vehicles and in cloud based simulations. I created a lightweight telemetry and ROS2 based communication layer that supports wireless connections between cars and the backend, and packaged the whole stack into containers for easy reuse by project partners. I then evaluated network latency in different settings to show that the architecture is suitable for real time, distributed perception research.
     </p>
   </div>
 </div>
